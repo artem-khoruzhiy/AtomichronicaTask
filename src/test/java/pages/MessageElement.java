@@ -7,9 +7,9 @@ import static com.codeborne.selenide.Condition.*;
 
 public class MessageElement {
 
-    private String messageText = "//div[contains(text(), 'message')]";
+    private String messageText = "//div/div[contains(text(), '%s')]";
 
     public void verifyCorrectBody(String body){
-        $(By.xpath(messageText)).shouldBe(visible);
+        $(By.xpath(String.format(messageText, body))).shouldBe(visible);
     }
 }
