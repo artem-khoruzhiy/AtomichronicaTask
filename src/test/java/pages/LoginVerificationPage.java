@@ -3,7 +3,8 @@ package pages;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class StartPage {
+public class LoginVerificationPage {
+
     private String loginField = "//*[@id='identifierId']";
     private String nextButton = "//*[@id='identifierNext']";
 

@@ -3,7 +3,8 @@ package pages;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PasswordPage {
+public class PasswordVerificationPage {
+
     private String passwordField = "//*[@name='password']";
     private String nextButton = "//*[@id='passwordNext']";
 

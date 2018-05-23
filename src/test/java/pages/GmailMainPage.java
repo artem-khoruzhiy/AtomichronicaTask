@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selectors.*;
 
 public class GmailMainPage {
+
     private String composeButton = "//*[text()='COMPOSE']";
     private String inboxButton = "//a[contains(., 'Inbox')]";
     private String messageButton = "//span/*[contains(text(), '%s')]";

@@ -1,6 +1,7 @@
 package entities;
 
 public class Message {
+
     private String addressee;
     private String subject;
     private String message;

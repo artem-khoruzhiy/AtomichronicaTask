@@ -23,13 +23,13 @@ public class TestClass {
 
         open("/");
 
-        StartPage startPage = new StartPage();
-        startPage.setLoginField("test.incytes4@gmail.com");
-        startPage.clickNext();
+        LoginVerificationPage loginVerificationPage = new LoginVerificationPage();
+        loginVerificationPage.setLoginField("test.incytes4@gmail.com");
+        loginVerificationPage.clickNext();
 
-        PasswordPage passwordPage = new PasswordPage();
-        passwordPage.setPasswordField("222222qwe");
-        passwordPage.clickNext();
+        PasswordVerificationPage passwordVerificationPage = new PasswordVerificationPage();
+        passwordVerificationPage.setPasswordField("222222qwe");
+        passwordVerificationPage.clickNext();
     }
 
     @Test(dataProvider = "data")
