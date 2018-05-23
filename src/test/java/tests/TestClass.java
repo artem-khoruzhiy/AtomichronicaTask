@@ -1,9 +1,10 @@
 package tests;
 
+import entities.Message;
+import pages.*;
 import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.Selenide.*;
 import org.testng.annotations.*;
-import pages.*;
 
 public class TestClass {
 
@@ -18,6 +19,8 @@ public class TestClass {
     public void settings(){
         Configuration.browser = "chrome";
         Configuration.baseUrl = "http://gmail.com";
+        Configuration.timeout = 7000;
+
         open("/");
 
         StartPage startPage = new StartPage();

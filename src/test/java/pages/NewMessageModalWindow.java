@@ -1,22 +1,21 @@
 package pages;
 
-import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.*;
 
 public class NewMessageModalWindow {
-
-    private String addresseeField = "//textarea[@name='to']";
-    private String subjectField = "//input[@name='subjectbox']";
-    private String messageField = "//div[@aria-label='Message Body']";
-    private String sendButton = "//div[contains(@aria-label, 'Send')]";
+    private String addresseeField = "//*[@name='to']";
+    private String subjectField = "//*[@name='subjectbox']";
+    private String messageField = "//*[@role='textbox']";
+    private String sendButton = "//*[contains(@aria-label, 'Send')]";
 
     public void setMessageFields(String addressee, String subject, String message){
-        $(By.xpath(addresseeField)).setValue(addressee);
-        $(By.xpath(subjectField)).setValue(subject);
-        $(By.xpath(messageField)).setValue(message);
+        $(byXpath(addresseeField)).setValue(addressee);
+        $(byXpath(subjectField)).setValue(subject);
+        $(byXpath(messageField)).setValue(message);
     }
 
     public void sendMessage(){
-        $(By.xpath(sendButton)).click();
+        $(byXpath(sendButton)).click();
     }
 }

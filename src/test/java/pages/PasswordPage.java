@@ -1,18 +1,17 @@
 package pages;
 
-import org.openqa.selenium.By;
-
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PasswordPage {
-    private String passwordField = "//div[@id='password']//input";
-    private String nextButton = "//div[@id='passwordNext']";
+    private String passwordField = "//*[@name='password']";
+    private String nextButton = "//*[@id='passwordNext']";
 
     public void setPasswordField(String password) {
-        $(By.xpath(passwordField)).setValue(password);
+        $(byXpath(passwordField)).setValue(password);
     }
 
     public void clickNext(){
-        $(By.xpath(nextButton)).click();
+        $(byXpath(nextButton)).click();
     }
 }

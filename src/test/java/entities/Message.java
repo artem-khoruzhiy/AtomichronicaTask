@@ -1,4 +1,4 @@
-package pages;
+package entities;
 
 public class Message {
     private String addressee;
