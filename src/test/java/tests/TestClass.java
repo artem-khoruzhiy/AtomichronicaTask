@@ -37,12 +37,9 @@ public class TestClass {
         newMessageModalWindow.setMessageFields(message.getAddressee(), message.getSubject(), message.getMessage());
         newMessageModalWindow.sendMessage();
 
-        System.out.println(1);
-
         gmailMainPage.openInbox();
-        System.out.println(2);
         gmailMainPage.verifyDeliveredMessage(message.getSubject());
-        System.out.println(3);
+
         MessageElement messageElement = gmailMainPage.openMessageBySubject(message.getSubject());
         messageElement.verifyCorrectBody(message.getMessage());
     }
