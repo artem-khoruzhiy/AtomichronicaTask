@@ -5,8 +5,14 @@ import static com.codeborne.selenide.Selenide.*;
 import org.testng.annotations.*;
 import pages.*;
 
-
 public class TestClass {
+
+    @DataProvider(name = "data")
+    public Object[][] getTestData(){
+        return new Object[][]{
+                {new Message("test.incytes4@gmail.com", "test", "Hello world")}
+        };
+    }
 
     @BeforeTest
     public void settings(){
@@ -23,17 +29,21 @@ public class TestClass {
         passwordPage.clickNext();
     }
 
-    @Test
-    public void sendMessageTest(){
+    @Test(dataProvider = "data")
+    public void sendMessageTest(Message message){
         GmailMainPage gmailMainPage = new GmailMainPage();
 
         NewMessageModalWindow newMessageModalWindow = gmailMainPage.clickComposeButton();
-        newMessageModalWindow.setMessageFields("test.incytes4@gmail.com", "test", "Hello world");
+        newMessageModalWindow.setMessageFields(message.getAddressee(), message.getSubject(), message.getMessage());
         newMessageModalWindow.sendMessage();
 
+        System.out.println(1);
+
         gmailMainPage.openInbox();
-        gmailMainPage.verifyDeliveredMessage("test");
-        MessageElement messageElement = gmailMainPage.openMessageBySubject("test");
-        messageElement.verifyCorrectBody("Hello world");
+        System.out.println(2);
+        gmailMainPage.verifyDeliveredMessage(message.getSubject());
+        System.out.println(3);
+        MessageElement messageElement = gmailMainPage.openMessageBySubject(message.getSubject());
+        messageElement.verifyCorrectBody(message.getMessage());
     }
 }

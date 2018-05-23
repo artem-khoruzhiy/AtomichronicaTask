@@ -2,8 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class GmailMainPage {
