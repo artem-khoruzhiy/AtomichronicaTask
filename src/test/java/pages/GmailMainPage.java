@@ -8,7 +8,7 @@ public class GmailMainPage {
 
     private String composeButton = "//*[text()='COMPOSE']";
     private String inboxButton = "//a[contains(., 'Inbox')]";
-    private String messageButton = "//span/*[contains(text(), '%s')]";
+    private String messageButtonPattern = "//span/*[contains(text(), '%s')]";
 
     public NewMessageModalWindow clickComposeButton(){
         $(byXpath(composeButton)).click();
@@ -20,11 +20,11 @@ public class GmailMainPage {
     }
 
     public void verifyDeliveredMessage(String subject){
-        $(byXpath(String.format(messageButton, subject))).shouldBe(Condition.visible);
+        $(byXpath(String.format(messageButtonPattern, subject))).shouldBe(Condition.visible);
     }
 
     public MessageElement openMessageBySubject(String subject){
-        $(byXpath(String.format(messageButton, subject))).click();
+        $(byXpath(String.format(messageButtonPattern, subject))).click();
 
         return new MessageElement();
     }

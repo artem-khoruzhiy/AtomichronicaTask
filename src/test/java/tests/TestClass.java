@@ -7,6 +7,8 @@ import static com.codeborne.selenide.Selenide.*;
 import org.testng.annotations.*;
 
 public class TestClass {
+    private final String LOGIN = "test.incytes4@gmail.com";
+    private final String PASSWORD = "222222qwe";
 
     @DataProvider(name = "data")
     public Object[][] getTestData(){
@@ -24,11 +26,11 @@ public class TestClass {
         open("/");
 
         LoginVerificationPage loginVerificationPage = new LoginVerificationPage();
-        loginVerificationPage.setLoginField("test.incytes4@gmail.com");
+        loginVerificationPage.setLoginField(LOGIN);
         loginVerificationPage.clickNext();
 
         PasswordVerificationPage passwordVerificationPage = new PasswordVerificationPage();
-        passwordVerificationPage.setPasswordField("222222qwe");
+        passwordVerificationPage.setPasswordField(PASSWORD);
         passwordVerificationPage.clickNext();
     }
 
