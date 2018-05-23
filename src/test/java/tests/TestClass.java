@@ -1,19 +1,20 @@
 package tests;
 
 import entities.Message;
+import org.testng.Assert;
 import pages.*;
 import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.Selenide.*;
 import org.testng.annotations.*;
 
 public class TestClass {
-    private final String LOGIN = "test.incytes4@gmail.com";
-    private final String PASSWORD = "222222qwe";
+    private final String LOGIN = "tt251852@gmail.com";
+    private final String PASSWORD = "222222_qwe";
 
     @DataProvider(name = "data")
     public Object[][] getTestData(){
         return new Object[][]{
-                {new Message("test.incytes4@gmail.com", "test", "Hello world")}
+                {new Message("tt251852@gmail.com", "test", "Hello world")}
         };
     }
 
